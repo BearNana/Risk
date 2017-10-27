@@ -119,6 +119,7 @@ public class Risk extends JFrame implements Runnable {
 // draw border
         g.setColor(Color.black);
         g.drawPolyline(x, y, 5);
+        
 
         if (animateFirstTime) {
             gOld.drawImage(image, 0, 0, null);
