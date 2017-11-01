@@ -22,6 +22,12 @@ public class Risk extends JFrame implements Runnable {
     Image image;
     Graphics2D g;
     Image Background;
+    //testvalues
+    int Sety;
+    int Setx;
+    int testx;
+    int testy;       
+    
 
     static Risk frame;
     public static void main(String[] args) {
@@ -38,11 +44,15 @@ public class Risk extends JFrame implements Runnable {
                     //left button
 
 // location of the cursor.
-                    int xpos = e.getX();
-                    int ypos = e.getY();
+                    testy=Sety-e.getY();
+                    testx=Setx-e.getX();
+                    System.out.println(testx+","+testy);
 
                 }
                 if (e.BUTTON3 == e.getButton()) {
+                    Sety= e.getY();
+                    Setx= e.getX();
+                    System.out.println(Setx+","+Sety);
                     //right button
                     reset();
                 }
@@ -125,13 +135,8 @@ public class Risk extends JFrame implements Runnable {
             gOld.drawImage(image, 0, 0, null);
             return;
         }
-        
-        
-        
-        
-        
-        
-        
+        Board.draw(g, this);
+       
         
 
     gOld.drawImage(image, 0, 0, null);
@@ -179,7 +184,6 @@ public class Risk extends JFrame implements Runnable {
                 Window.xsize = getSize().width;
                 Window.ysize = getSize().height;
             }
-            Background = Toolkit.getDefaultToolkit().getImage("./Risk Board.Jpg");
             reset();
             
         }
