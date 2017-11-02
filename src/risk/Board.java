@@ -7,14 +7,11 @@ import java.awt.Toolkit;
 
 public class Board {
 private static final Image boardImage=Toolkit.getDefaultToolkit().getImage("./Board.jpg");
-private static Sector Amaricas[][]=new Sector[4][7];
-
-Board(){
-    
-    
-    
-    
-    
+private static Sector sectors[][]=new Sector[14][7];
+public static void Intilize(){
+int xvals[]={-53,4,59,68,41,6,-39,-50,-67,-54};
+int yvals[]={-61,-22,-47,-4,52,65,51,-9,-12,-51,-61};
+sectors[0][0]=new Sector("Alaska",298,252,xvals,yvals);    
     
     
 }
@@ -25,9 +22,10 @@ private static void drawBoard(int xpos,int ypos,double rot,double xscale,double 
         int width = boardImage.getWidth(obj);
         int height = boardImage.getHeight(obj);
         
-        
-        
-        
+        for (int i=0;i<sectors.length;i++){
+        if(sectors[i]!=null){
+            sectors[i].draw(g);     }
+        }
         
         g.translate(xpos,ypos);
         g.rotate(rot  * Math.PI/180.0);

@@ -172,7 +172,7 @@ public class Risk extends JFrame implements Runnable {
     }
 /////////////////////////////////////////////////////////////////////////
     public void reset() {
-
+        Board.Intilize();
 //init the location of the rocket to the center.
         
     }
@@ -184,6 +184,7 @@ public class Risk extends JFrame implements Runnable {
                 Window.xsize = getSize().width;
                 Window.ysize = getSize().height;
             }
+            
             reset();
             
         }
